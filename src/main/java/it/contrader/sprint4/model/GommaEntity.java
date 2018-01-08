@@ -62,15 +62,10 @@ public class GommaEntity implements Serializable {
         this.typeVehicle = typeVehicle;
         this.season = season;
         this.quantity=quantity;
-
     }
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getModel() {
@@ -173,7 +168,7 @@ public class GommaEntity implements Serializable {
                 Double.compare(that.weight, weight) == 0 &&
                 Double.compare(that.quantity, quantity) == 0 &&
                 Objects.equals(model, that.model) &&
-                Objects.equals(manufacturer, that.manufacturer)&&
+                Objects.equals(manufacturer, that.manufacturer) &&
                 Objects.equals(speed, that.speed) &&
                 Objects.equals(season, that.season) &&
                 Objects.equals(typeVehicle, that.typeVehicle);
