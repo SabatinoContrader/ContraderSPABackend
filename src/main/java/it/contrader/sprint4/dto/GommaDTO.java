@@ -39,8 +39,8 @@ public class GommaDTO {
         this.diameter = diameter;
         this.weight = weight;
         this.speed = speed;
-        this.typeVehicle = typeVehicle;
         this.season = season;
+        this.typeVehicle = typeVehicle;
         this.quantity=quantity;
     }
 

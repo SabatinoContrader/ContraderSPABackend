@@ -1,6 +1,8 @@
 drop database contrader;
 create database contrader;
 
+USE contrader;
+
 create table contrader.users(
   username varchar(50)  NOT NULL,
   password varchar(50),

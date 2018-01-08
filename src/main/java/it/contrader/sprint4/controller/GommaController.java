@@ -27,7 +27,7 @@ public class GommaController
         this.gommaConverter = gommaConverter;
     }
 
-    @RequestMapping(value="/all",method = RequestMethod.GET)
+    @RequestMapping(value="/allgomme",method = RequestMethod.GET)
     public GenericResponse<List<GommaDTO>> getAllGomme()
     {
         List<GommaDTO> gomme = new ArrayList<>();
@@ -37,7 +37,7 @@ public class GommaController
         return new GenericResponse<>(0, gomme);
     }
 
-    @RequestMapping(value="/new", method = RequestMethod.POST)
+    @RequestMapping(value="/insertGomme", method = RequestMethod.POST)
     public GenericResponse<GommaDTO> insert (@RequestBody GommaDTO gommaDTO)
     {
          GommaEntity gommaInserita = gommaService.insertGomma(gommaConverter.convertToEntity(gommaDTO));
@@ -46,4 +46,19 @@ public class GommaController
          }
          else return new GenericResponse<>(1, null);
     }
+
+    @RequestMapping(value="/allgommeManufacturer", method = RequestMethod.GET)
+    public GenericResponse<List<GommaDTO>> findByManufacturer (@RequestParam("manufacturer") String manufacturer, @RequestParam("typeVehicle") String typeVehicle)
+    {
+        List<GommaDTO> gomme = new ArrayList<>();
+        for (GommaEntity gommaEntity: gommaService.findByManufacturer(manufacturer, typeVehicle)) {
+            gomme.add(gommaConverter.convertToDTO(gommaEntity));
+    }
+        return new GenericResponse<>(0, gomme);
+    }
+
+  /*  @RequestMapping(value="/manufacturerForVehicle", method = RequestMethod.GET)
+    public GenericResponse<String>*/
+
+
 }
