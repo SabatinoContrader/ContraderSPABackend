@@ -24,7 +24,7 @@ public class GommaDTO {
 
     private String typeVehicle;
 
-    private double quantity;
+    private int quantity;
 
 
     public GommaDTO () {}
@@ -125,11 +125,11 @@ public class GommaDTO {
         this.typeVehicle = typeVehicle;
     }
 
-    public double getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(double quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 

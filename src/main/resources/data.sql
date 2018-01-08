@@ -36,7 +36,7 @@ create table contrader.gomme(
   speed varchar(3),
   season varchar(50),
   type_vehicle varchar(50),
-  quantity varchar(10),
+  quantity int(10),
   PRIMARY KEY (id_gomme)
 );
 

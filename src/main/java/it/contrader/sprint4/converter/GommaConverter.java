@@ -10,7 +10,7 @@ public class GommaConverter implements Converter<GommaEntity, GommaDTO> {
 
     public GommaDTO convertToDTO (GommaEntity gommaEntity) {
         return new GommaDTO(gommaEntity.getModel(), gommaEntity.getManufacturer(), gommaEntity.getPrice(), gommaEntity.getWidth(), gommaEntity.getHeight(),
-                gommaEntity.getDiameter(), gommaEntity.getWeight(), gommaEntity.getSpeed(), gommaEntity.getSeason(), gommaEntity.getTypeVehicle(), (int) gommaEntity.getQuantity());
+                gommaEntity.getDiameter(), gommaEntity.getWeight(), gommaEntity.getSpeed(), gommaEntity.getSeason(), gommaEntity.getTypeVehicle(), gommaEntity.getQuantity());
     }
 
     /* width, height, diameter, weight, speed, season, typeVehicle, quantity */

@@ -44,11 +44,11 @@ public class GommaEntity implements Serializable {
     private String typeVehicle;
 
     @Column
-    private double quantity;
+    private int quantity;
 
     public GommaEntity () {}
 
-    public GommaEntity(Integer idGomme, String model, String manufacturer, double price, double width, double height, double diameter, double weight, String speed, String season,String typeVehicle,int quantity)
+    public GommaEntity(Integer idGomme, String model, String manufacturer, double price, double width, double height, double diameter, double weight, String speed, String season,String typeVehicle, int quantity)
     {
         this.id = idGomme;
         this.model = model;
@@ -148,11 +148,11 @@ public class GommaEntity implements Serializable {
         this.typeVehicle = typeVehicle;
     }
 
-    public double getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(double quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
