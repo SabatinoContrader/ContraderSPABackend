@@ -4,6 +4,8 @@ use contrader;
 
 USE contrader;
 
+use contrader;
+
 create table contrader.users(
   username varchar(50)  NOT NULL,
   password varchar(50),
