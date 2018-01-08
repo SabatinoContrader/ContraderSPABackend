@@ -1,5 +1,6 @@
 drop database contrader;
 create database contrader;
+use contrader;
 
 USE contrader;
 
