@@ -26,7 +26,7 @@ public class UserConverter implements Converter<UserEntity, UserDTO>{
         userEntity.setCity(userDTO.getCity());
         userEntity.setAddress(userDTO.getAddress());
         userEntity.setTelephone(userDTO.getTelephone());
-        userEntity.setRole(userDTO.getRole());
+        userEntity.setRole("user");
         return userEntity;
     }
 
