@@ -2,7 +2,9 @@ package it.contrader.sprint4.converter;
 
 import it.contrader.sprint4.dto.CompatibilityDTO;
 import it.contrader.sprint4.model.CompatibilityEntity;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CompatibilityConverter implements Converter<CompatibilityEntity, CompatibilityDTO> {
 
     public CompatibilityDTO convertToDTO(CompatibilityEntity compatibilityEntity){
