@@ -40,7 +40,9 @@ public class UserController {
         {
             users.add(userConverter.convertToDTO(userEntity));
         }
-        return new GenericResponse<>(0,users);
+
+        if (users.size() == 0) return  new GenericResponse<>(1,null);
+        else return new GenericResponse<>(0,users);
     }
 
 
