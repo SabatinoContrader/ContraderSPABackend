@@ -13,6 +13,8 @@ public class GommaConverter implements Converter<GommaEntity, GommaDTO> {
                 gommaEntity.getDiameter(), gommaEntity.getWeight(), gommaEntity.getSpeed(), gommaEntity.getSeason(), gommaEntity.getTypeVehicle(), gommaEntity.getQuantity());
     }
 
+
+
     /* width, height, diameter, weight, speed, season, typeVehicle, quantity */
 
     public GommaEntity convertToEntity (GommaDTO gommaDTO) {

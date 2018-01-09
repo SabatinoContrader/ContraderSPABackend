@@ -4,6 +4,7 @@ import it.contrader.sprint4.GenericResponse;
 import it.contrader.sprint4.converter.GommaConverter;
 import it.contrader.sprint4.dto.GommaDTO;
 import it.contrader.sprint4.model.GommaEntity;
+import it.contrader.sprint4.model.GommaSize;
 import it.contrader.sprint4.service.GommaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -57,8 +58,41 @@ public class GommaController
         return new GenericResponse<>(0, gomme);
     }
 
-  /*  @RequestMapping(value="/manufacturerForVehicle", method = RequestMethod.GET)
-    public GenericResponse<String>*/
+    @RequestMapping(value="/manufacturerForVehicle", method = RequestMethod.GET)
+    public GenericResponse<List<String>> getAllManufacturerForTypeVehicle(@RequestParam("type") String type)
+    {
+        List<String> manufactures= gommaService.getAllManufacturerForTypeVehicle(type);
+        if (manufactures != null){
+        return new GenericResponse<>(0, manufactures);
+    }
+        else return new GenericResponse<>(1, null);
+    }
+
+    @RequestMapping(value="/gommeForSize", method = RequestMethod.GET)
+    public GenericResponse<List<GommaDTO>> getAllGommeForSize(@ModelAttribute GommaSize gomma)
+    {
+        List<GommaDTO> gomme = new ArrayList<>();
+        for (GommaEntity gommaEntity: gommaService.getAllGommeForSize(gomma)){
+            gomme.add(gommaConverter.convertToDTO(gommaEntity));
+        }
+        return new GenericResponse<>(0, gomme);
+    }
+
+    @RequestMapping(value="/gommeForSizeAuto", method = RequestMethod.GET)
+    public GenericResponse<List<GommaDTO>> getAllGommeForSizeAuto(@ModelAttribute GommaSize gomma)
+    {
+        List<GommaDTO> gomme = new ArrayList<>();
+        for (GommaEntity gommaEntity: gommaService.getAllGommeForSizeAuto(gomma)){
+            gomme.add(gommaConverter.convertToDTO(gommaEntity));
+        }
+        return new GenericResponse<>(0, gomme);
+    }
+
+   /* @RequestMapping(value="/gommeForVehicle", method = RequestMethod.GET)
+    public GenericResponse<List<GommaDTO>> getAllGommeForVehicle(@ModelAttribute GommaSize gomma, Model model)
+    {
+
+    }*/
 
 
 }
