@@ -1,7 +1,6 @@
 package it.contrader.sprint4.controller;
 
 import it.contrader.sprint4.GenericResponse;
-import it.contrader.sprint4.converter.CompatibilityConverter;
 import it.contrader.sprint4.converter.GommaConverter;
 import it.contrader.sprint4.converter.VehicleConverter;
 import it.contrader.sprint4.dto.GommaDTO;
@@ -25,15 +24,14 @@ public class VehicleController {
     private VehicleService vehicleService;
     private VehicleConverter vehicleConverter;
     private CompatibilityService compatibilityService;
-    private CompatibilityConverter compatibilityConverter;
     private GommaService gommaService;
     private GommaConverter gommaConverter;
+
     @Autowired
-    public VehicleController(VehicleService vehicleService, VehicleConverter vehicleConverter, CompatibilityService compatibilityService, CompatibilityConverter compatibilityConverter, GommaService gommaService, GommaConverter gommaConverter){
+    public VehicleController(VehicleService vehicleService, VehicleConverter vehicleConverter, CompatibilityService compatibilityService, GommaService gommaService, GommaConverter gommaConverter){
         this.vehicleService=vehicleService;
         this.vehicleConverter=vehicleConverter;
         this.compatibilityService=compatibilityService;
-        this.compatibilityConverter=compatibilityConverter;
         this.gommaService=gommaService;
         this.gommaConverter=gommaConverter;
     }
