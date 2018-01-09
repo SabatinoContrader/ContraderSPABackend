@@ -13,7 +13,7 @@ public class VehicleConverter implements Converter<VehicleEntity, VehicleDTO> {
         vehicleEntity.setBrand(vehicleDTO.getBrand());
         vehicleEntity.setModel(vehicleDTO.getModel());
         vehicleEntity.setFuel(vehicleDTO.getFuel());
-        vehicleEntity.setVersion(vehicleDTO.getModel());
+        vehicleEntity.setVersion(vehicleDTO.getVersion());
         vehicleEntity.setCapacity(vehicleDTO.getCapacity());
         return vehicleEntity;
     }

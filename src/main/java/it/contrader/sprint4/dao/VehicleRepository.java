@@ -16,4 +16,5 @@ public interface VehicleRepository extends CrudRepository<VehicleEntity, Long> {
     List<VehicleEntity> findByBrand(String brand);
 
     VehicleEntity findByBrandAndModelAndFuelAndVersionAndCapacity(String brand, String model, String fuel, String version, String capacity);
+
 }
