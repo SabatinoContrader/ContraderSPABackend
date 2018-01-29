@@ -23,12 +23,14 @@ public class LoginController {
 
     private LoginService loginService;
     private UserConverter userConverter;
+    private UserService userService;
 
     @Autowired
-    public LoginController(LoginService loginService,UserConverter userConverter)
+    public LoginController(LoginService loginService,UserService userService,UserConverter userConverter)
     {
         this.loginService = loginService;
         this.userConverter=userConverter;
+        this.userService=userService;
     }
 
     @RequestMapping(value="/page")
@@ -68,8 +70,11 @@ public class LoginController {
             return new GenericResponse<>(0,null);//username già in uso
         else
         {
+            UserEntity userEntity = userService.insert(user);
+
             UserDTO duser=userConverter.convertToDTO(user);
-            return new GenericResponse<>(1,duser);//per il menuAdmin
+
+            return new GenericResponse<>(1,duser);
         }
     }
 
